@@ -20,7 +20,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GAR_LOCATION: us-west2
-  GKE_CLUSTER: zephy-cluster
+  GKE_CLUSTER: zephyr-cluster
   GKE_ZONE: us-west2
   DEPLOYMENT_NAME: zephyr-deploy
   REPOSITORY: zephyr-repo
