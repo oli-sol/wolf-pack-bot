@@ -26,7 +26,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: zephy-cluster
   GKE_ZONE: us-west2
-  DEPLOYMENT_NAME: zephyr-deploy
+  DEPLOYMENT_NAME: zephyr-app
   IMAGE: zephyr-image
 
 jobs:
@@ -80,7 +80,6 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-        ./kustomize build . | kubectl apply -f -
+        kubectl set image --record deployment/zephyr-app container=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
