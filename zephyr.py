@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 
+
 class ZephyrCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -15,6 +16,7 @@ class ZephyrCog(commands.Cog):
         else:
             await ctx.send('Hello {0.name}... This feels familiar.'.format(member))
         self._last_member = member
+
 
 def setup(bot):
     bot.add_cog(ZephyrCog(bot))
