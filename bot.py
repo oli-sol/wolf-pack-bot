@@ -1,4 +1,6 @@
-# bot.py
+"""
+Entry point for bot
+"""
 import os
 from discord.ext import commands
 from dotenv import load_dotenv

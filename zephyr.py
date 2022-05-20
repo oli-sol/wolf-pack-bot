@@ -1,9 +1,14 @@
+"""
+Adds cog to bot
+"""
 import discord
 from discord.ext import commands
 
 
 class ZephyrCog(commands.Cog):
+    """Zephyr Cog"""
     def __init__(self, bot):
+        """Initiates bot"""
         self.bot = bot
         self._last_member = None
 
@@ -19,4 +24,5 @@ class ZephyrCog(commands.Cog):
 
 
 def setup(bot):
+    """Adds cog"""
     bot.add_cog(ZephyrCog(bot))
