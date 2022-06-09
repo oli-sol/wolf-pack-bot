@@ -22,6 +22,17 @@ class ZephyrCog(commands.Cog):
             await ctx.send('Hello {0.name}... This feels familiar.'.format(member))
         self._last_member = member
 
+    @commands.command()
+    async def list_raiders(self, ctx, role: discord.Role):
+        """Lists all members with this discord Role"""
+        for member in role.members:
+            await ctx.send(f'{member.display_name} - {member.id}')
+
+    @list_raiders.error
+    async def role_error(self, ctx, error):
+        if isinstance(error, commands.RoleNotFound):
+            await ctx.send("Invalid syntax. \nUse:     !list_raiders <role>")
+
 
 def setup(bot):
     """Adds cog"""
