@@ -28,11 +28,24 @@ class ZephyrCog(commands.Cog):
         for member in role.members:
             await ctx.send(f'{member.display_name} - {member.id}')
 
+    @commands.command()
+    async def weekly_ping(self, ctx, role: discord.Role):
+        """Ping all Raiders within given discord Role"""
+        my_msg = ('It\'s another week. Respond thumbs up or down if you can raid this week:\n')
+        for member in role.members:
+            my_msg += (f'{member.mention}')
+        msg = await ctx.send(my_msg)
+        await msg.add_reaction("👍")
+        await msg.add_reaction("👎")
+
     @list_raiders.error
     async def role_error(self, ctx, error):
         if isinstance(error, commands.RoleNotFound):
             await ctx.send("Invalid syntax. \nUse:     !list_raiders <role>")
-
+    @weekly_ping.error
+    async def role_error(self, ctx, error):
+        if isinstance(error, commands.RoleNotFound):
+            await ctx.send("Invalid syntax. \nUse:     !weekly_ping <role>")
 
 def setup(bot):
     """Adds cog"""
