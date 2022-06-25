@@ -14,7 +14,7 @@ intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-initial_extensions = ["zephyr", "raid"]
+initial_extensions = ["zephyr", "raid", "speech"]
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 for extension in initial_extensions:
