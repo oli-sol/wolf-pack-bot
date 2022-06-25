@@ -3,6 +3,7 @@ Entry point for bot
 """
 import os
 import discord
+
 intents = discord.Intents.default()
 intents.members = True
 from discord.ext import commands
@@ -14,7 +15,7 @@ GUILD = os.getenv('DISCORD_GUILD')
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-initial_extensions = ["zephyr"]
+initial_extensions = ["zephyr", "raid"]
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 if __name__ == '__main__':
