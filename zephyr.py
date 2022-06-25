@@ -12,15 +12,6 @@ class ZephyrCog(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command()
-    async def hello(self, ctx, *, member: discord.Member = None):
-        """Says hello"""
-        member = member or ctx.author
-        if self._last_member is None or self._last_member.id != member.id:
-            await ctx.send('Hello {0.name}~'.format(member))
-        else:
-            await ctx.send('Hello {0.name}... This feels familiar.'.format(member))
-        self._last_member = member
 
     @commands.command()
     async def list_raiders(self, ctx, role: discord.Role):
@@ -31,7 +22,7 @@ class ZephyrCog(commands.Cog):
     @commands.command()
     async def weekly_ping(self, ctx, role: discord.Role):
         """Ping all Raiders within given discord Role"""
-        my_msg = ('It\'s another week. Respond thumbs up or down if you can raid this week:\n')
+        my_msg = ('Woof! It\'s another week. Respond with a thumbs up or down if you can raid this week:\n')
         for member in role.members:
             my_msg += (f'{member.mention}')
         msg = await ctx.send(my_msg)
