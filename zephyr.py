@@ -38,6 +38,14 @@ class ZephyrCog(commands.Cog):
         await msg.add_reaction("👍")
         await msg.add_reaction("👎")
 
+    @commands.command()
+    async def participation_ping(self, ctx, role: discord.Role, custom_msg):
+        """Pings with custom message to poll for participation in a given activity"""
+        for member in role.members:
+            custom_msg += (f'{member.mention}')
+        msg = await ctx.send(custom_msg + ". Respond thumbs up if you can make it.")
+        await msg.add_reaction("👍")
+
     @list_raiders.error
     async def role_error(self, ctx, error):
         if isinstance(error, commands.RoleNotFound):
