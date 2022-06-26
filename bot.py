@@ -18,6 +18,6 @@ initial_extensions = ["zephyr", "raid", "speech"]
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].
 for extension in initial_extensions:
-    bot.load_extension(extension)
+    bot.load_extension("cogs." + extension)
 
 bot.run(TOKEN)
