@@ -51,12 +51,13 @@ class Raid(commands.Cog):
 
             # if dict isn't empty, send
             if needed:
-                await ctx.send("The following items are still needed for BiS! *wags tail*\n\n")
-
                 # construct response string, send
+                response = "The following items are still needed for BiS! *wags tail*\n\n"
+
                 for key, value in needed.items():
-                    response = key + ": " + value
-                    await ctx.send(response)
+                    response += key + ": " + value + "\n"
+
+                await ctx.send(response)
 
 
 def setup(client):
