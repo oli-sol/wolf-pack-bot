@@ -54,7 +54,7 @@ class Speech(commands.Cog):
             f'{name} What could be more incredible than a talking dog?\n\nA spelling bee.\n\nWoof!',
             f'{name} Why did the dog upgrade his phone plan?\n\nTo get collar ID.\n\n*wags tail*',
             f'{name} Why are dogs so loud?\n\nThey have built-in sub-woofers.\n\nWoof!',
-            f'{name} What do you call a dog that can\'t bark?\n\nA hushpuppy.\\*wags tail*',
+            f'{name} What do you call a dog that can\'t bark?\n\nA hushpuppy.\n\n*wags tail*',
             f'{name} Where does a Labrador’s food go before it can be sold in stores?\n\nTo the lab for '
             f'testing.\n\n*wags tail contently* ',
             f'{name} Whenever I go to the park, the ducks always try to bite me.\n\nMust be because I\'m '
