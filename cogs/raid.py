@@ -11,7 +11,7 @@ class Raid(commands.Cog):
         self.db_client = datastore.Client()
 
     @commands.command()
-    async def query(self, ctx):
+    async def bis(self, ctx):
         query = self.db_client.query(kind="Member")
         results = list(query.fetch())
         await ctx.send(results)
