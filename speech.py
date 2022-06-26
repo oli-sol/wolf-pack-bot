@@ -47,7 +47,18 @@ class Speech(commands.Cog):
             f'{name} What do you call a dog that has been left outside in the cold for an extended period of time?\n '
             f'\nA chili-dog.\n\nWoof!',
             f'{name} What kind of dog likes taking a bath every day?\n '
-            f'\nA shampoo-dle.\n\n*wags tail*'
+            f'\nA shampoo-dle.\n\n*wags tail*',
+            f'{name} What do you call a dog magician?\n\nA labracadabrador.\n\n*wags tail*',
+            f'{name} Why did the two-legged dog to come to an abrupt halt?\n\nIt had two paws.\n\nWoof!',
+            f'{name} What do you get when you cross a dog with a phone?\n\nA golden receiver.\n\n*wags tail*',
+            f'{name} What could be more incredible than a talking dog?\n\nA spelling bee.\n\nWoof!',
+            f'{name} Why did the dog upgrade his phone plan?\n\nTo get collar ID.\n\n*wags tail*',
+            f'{name} Why are dogs so loud?\n\nThey have built-in sub-woofers.\n\nWoof!',
+            f'{name} What do you call a dog that can\'t bark?\n\nA hushpuppy.\\*wags tail*',
+            f'{name} Where does a Labrador’s food go before it can be sold in stores?\n\nTo the lab for '
+            f'testing.\n\n*wags tail contently* ',
+            f'{name} Whenever I go to the park, the ducks always try to bite me.\n\nMust be because I\'m '
+            f'pure bread.\n\n*wags tail contently*'
         ]
 
         response = random.choice(jokes)
